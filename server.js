@@ -47,6 +47,11 @@ app.use('/api/v1/jobs', authenticateUser, jobRouter);
 app.use('/api/v1/users', authenticateUser, userRouter);
 app.use('/api/v1/auth', authRouter);
 
+// this is for vite to work
+app.get('*', (req, res) => {
+  res.sendFile(__dirname + '/public/index.html');
+});
+
 // -------------------- ERROR HANDLERS ---------------------
 app.use('*', (req, res) => {
   res.status(404).send({ msg: 'Not found' });
