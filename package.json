@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon server.js",
-    "setup-project": "npm i && cd client && npm i"
+    "setup-project": "npm i && cd client && npm i",
+    "server": "nodemon server",
+    "setup-production-app": "npm i && cd client && npm i && npm run build"
   },
   "keywords": [],
   "author": "",

@@ -33,7 +33,7 @@ const port = process.env.PORT || 5100;
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/client/dist'));
 
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
@@ -49,7 +49,7 @@ app.use('/api/v1/auth', authRouter);
 
 // this is for vite to work
 app.get('*', (req, res) => {
-  res.sendFile(__dirname + '/public/index.html');
+  res.sendFile(__dirname + '/client/dist/index.html');
 });
 
 // -------------------- ERROR HANDLERS ---------------------
